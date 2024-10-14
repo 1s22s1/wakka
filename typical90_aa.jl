@@ -8,10 +8,17 @@ parsestrings() = readline() |> split
 
 function solve()
     n = parseint()
-    positions = [parseints() for _ ∈ 1:n]
 
-    for x ∈ 0:100, y ∈ 0:100
-        # height =
+    set = Set()
+
+    for i ∈ 1:n
+        name = parsestring()
+
+        if name ∉ set
+            push!(set, name)
+
+            println(i)
+        end
     end
 end
 

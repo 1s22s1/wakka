@@ -24,7 +24,7 @@ function solve()
     if length(sorted_freq) <= k
         println(0)
     else
-        println(sum(sorted_freq[1:length(sorted_freq) - k]))
+        println(sum(sorted_freq[1:length(sorted_freq)-k]))
     end
 end
 

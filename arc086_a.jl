@@ -7,21 +7,21 @@ parseints() = readline() |> split |> x -> parse.(Int, x)
 parsestrings() = readline() |> split
 
 function solve()
-    _, k = parseints()
+    n, k = parseints()
     an = parseints()
 
-    dict = Dict()
+    frequency = zeros(Int, maximum(an))
 
     for a ∈ an
-        dict[a] = get(dict, a, 0) + 1
+        frequency[a] += 1
     end
 
-    if length(dict) ≤ k
+    sorted_frequency = sort(filter(x -> x ≠ 0, frequency))
+
+    if length(sorted_frequency) ≤ k
         println(0)
     else
-        sorted_dict = sort(collect(dict), by = x -> x[2])
-
-        println(map(x -> x[2], sorted_dict[1:length(dict)-k]) |> sum)
+        println(sorted_frequency[begin:length(sorted_frequency)-k] |> sum)
     end
 end
 
