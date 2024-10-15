@@ -13,15 +13,15 @@ function outcome()
     outcome = 0
 
     i = 1
-    while i < n+1
+    while i < n + 1
         j = i
 
         while j < n && hn[j] ≥ hn[j+1]
             j += 1
         end
 
-        outcome = max(outcome, j-i)
-        i = j+1
+        outcome = max(outcome, j - i)
+        i = j + 1
     end
 
     println(outcome)

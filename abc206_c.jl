@@ -19,7 +19,7 @@ function solve()
     outcome = 0
 
     for i ∈ eachindex(arr), j ∈ i+1:length(arr)
-        outcome += arr[i]*arr[j]
+        outcome += arr[i] * arr[j]
     end
 
     println(outcome)

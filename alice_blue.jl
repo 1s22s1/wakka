@@ -9,7 +9,7 @@ parsestrings() = readline() |> split
 function solve()
     n = parseint()
 
-    dict = Dict{String, Int}()
+    dict = Dict{String,Int}()
 
     for _ ∈ 1:n
         s = parsestring()

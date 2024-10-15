@@ -6,7 +6,7 @@ parseints() = readline() |> split |> x -> parse.(Int, x)
 
 parsestrings() = readline() |> split
 
-function solve()
+function outcome()
     n = parseint()
     an = parseints()
 
@@ -15,9 +15,12 @@ function solve()
         dict[a] = get(dict, a, 0) + 1
     end
 
-    arr = collect(values(dict))
+    outcome = 0
+    for (k, v) ∈ dict
+        outcome += v ÷ 2
+    end
 
-    println((sum(arr)^2 - sum(arr .^ 2)) ÷ 2)
+    println(outcome)
 end
 
-solve()
+outcome()
