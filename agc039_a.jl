@@ -26,8 +26,12 @@ function outcome()
 
     outcome = 0
 
+    # 一文字の種類の場合
+    if length(arr) == 1
+        outcome = arr[1][2] * k ÷ 2
     # 先頭と末尾の文字が同じの場合
-    if arr[begin][1] == arr[end][1] && length(arr) ≥ 2
+    elseif arr[begin][1] == arr[end][1]
+        @show
         left_side = arr[begin]
         right_side = arr[end]
         middle = arr[begin+1:end-1]
