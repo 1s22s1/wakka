@@ -16,17 +16,23 @@ function outcome()
     while i < n + 1
         j = i
 
-        while j < n && an[j] ≤ an[j+1]
-            j += 1
+        k_up = k_down = j
+
+        while k_up < n && an[k_up] ≤ an[k_up+1]
+            k_up += 1
         end
-        @show i, j
+
+        while k_down < n && an[k_down] ≥ an[k_down+1]
+            k_down += 1
+        end
+
+        j = max(k_up, k_down)
 
         push!(arr, (an[i], j - i + 1))
-        i = j+1
+        i = j + 1
     end
 
-    @show arr
-
+    println(length(arr))
 end
 
 outcome()
