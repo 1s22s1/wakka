@@ -1,12 +1,13 @@
 module Algorithm
 function rle(s)
     arr = []
+    n = length(s)
 
     i = 1
-    while i < length(s) + 1
+    while i < n + 1
         j = i
 
-        while j < length(s) + 1 && s[i] == s[j]
+        while j < n + 1 && s[i] == s[j]
             j += 1
         end
 
