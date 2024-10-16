@@ -23,7 +23,12 @@ end
 
 parseint() = readline() |> x -> parse(Int, x)
 parsestring() = readline()
-parseints() = readline() |> split |> x -> parse.(Int, x)
 parsestrings() = readline() |> split
+
+function parseints()
+    # return readline() |> split |> x -> parse.(Int, x)
+    line = readline()
+    return parse.(Int, split(line))
+end
 
 main()

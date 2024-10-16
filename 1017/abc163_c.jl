@@ -5,7 +5,7 @@ function main()
     g = [[] for _ ∈ 1:n]
 
     for i ∈ 1:n-1
-        push!(g[an[i]], i+1)
+        push!(g[an[i]], i + 1)
     end
 
     for e ∈ g
