@@ -17,6 +17,49 @@ function rle(s)
 
     return arr
 end
+
+function bfs(s, g)
+    nexts = [s]
+
+    seen = fill(false, length(g))
+    seen[s] = true
+
+    while !isempty(nexts)
+        target_vertex = popfirst!(nexts)
+
+        for vertex ∈ g[target_vertex]
+            if seen[vertex]
+                continue
+            end
+
+            push!(nexts, vertex)
+            seen[vertex] = true
+        end
+    end
+
+    return filter(x -> x, seen) |> length
+end
+
+function isconnect(g)
+    nexts = [1]
+    seen = fill(false, length(g))
+    seen[1] = true
+
+    while !isempty(nexts)
+        target_vertex = popfirst!(nexts)
+
+        for vertex ∈ g[target_vertex]
+            if seen[vertex]
+                continue
+            end
+
+            push!(nexts, vertex)
+            seen[vertex] = true
+        end
+    end
+
+    return all(x -> x, seen)
+end
 end
 
 if abspath(PROGRAM_FILE) == @__FILE__
