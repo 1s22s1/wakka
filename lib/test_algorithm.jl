@@ -1,7 +1,7 @@
 module TestAlgorithm
 using Test
 
-include("aogorithm.jl")
+include("algorithm.jl")
 
 function main()
     @testset "rle" begin
