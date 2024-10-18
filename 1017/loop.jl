@@ -3,9 +3,9 @@ using BenchmarkTools
 function loop1(an)
     sum = 0
 
-    for i ∈ 1:length(an)
-        sum += an[i]
-    end
+    # for i ∈ 1:length(an)
+    #     sum += an[i]
+    # end
 end
 
 function loop2(an)

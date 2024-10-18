@@ -13,11 +13,11 @@ function outcome()
 
     # Left search, target is <
 
-    for i ∈ 1:length(s)
-        if s[i] == '<'
-            arr[i+1] = arr[i] + 1
-        end
-    end
+    # for i ∈ 1:length(s)
+    #     if s[i] == '<'
+    #         arr[i+1] = arr[i] + 1
+    #     end
+    # end
 
     for i ∈ length(s):-1:1
         if s[i] == '>'
