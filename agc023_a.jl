@@ -11,7 +11,7 @@ function main()
     outcome = 0
 
     for k ∈ 1:n, i ∈ 1:n-k+1
-        if sn[i+k]-sn[i] == 0
+        if sn[i+k] == sn[i]
             outcome += 1
         end
     end
