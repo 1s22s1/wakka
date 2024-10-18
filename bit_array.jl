@@ -1,13 +1,11 @@
 using Primes
 
 function main()
-    sn = Int16[0]
+    sn = BitArray(fill(false, 10^5))
 
     for i ∈ 1:10^5
         if i % 2 ≠ 0 && isprime(i) && isprime((i + 1) ÷ 2)
-            push!(sn, sn[end] + 1)
-        else
-            push!(sn, sn[end])
+            sn[i] = true
         end
     end
 
@@ -16,7 +14,7 @@ function main()
     for _ ∈ 1:q
         l, r = parseints()
 
-        println(sn[r+1] - sn[l])
+        println(length(filter(x -> x, sn[l:r])))
     end
 end
 

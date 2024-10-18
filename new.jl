@@ -2,12 +2,13 @@ using Primes
 
 function main()
     sn = Int16[0]
+    sn = zeros(Int16, 10^5 + 1)
 
     for i ∈ 1:10^5
         if i % 2 ≠ 0 && isprime(i) && isprime((i + 1) ÷ 2)
-            push!(sn, sn[end] + 1)
+            sn[i+1] = sn[i] + 1
         else
-            push!(sn, sn[end])
+            sn[i+1] = sn[i]
         end
     end
 
